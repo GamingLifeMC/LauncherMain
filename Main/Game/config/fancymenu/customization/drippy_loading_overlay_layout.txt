@@ -406,7 +406,7 @@ element {
 }
 
 element {
-  source = GamingLife V0.1.19
+  source = GamingLife V0.1.20
   source_mode = direct
   shadow = true
   refresh = false
