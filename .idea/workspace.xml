@@ -5,33 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a3123b3-b84b-4edc-a5ae-ce000f37a804" name="Changes" comment="ABC">
-      <change afterPath="$PROJECT_DIR$/Main/Game/mods/watermedia-2.1.37.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Main/Game/mods/watermedia-3.0.0.23.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/drippyloadingscreen/options.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/assets/minecraft_title_lang.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/custom_gui_screens.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/customizablemenus.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/customization/drippy_loading_overlay_layout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/customization/title_screen_layout.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/gaminglife/minecraft_title_lang.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/layout_editor/widgets/element_layer_control.lewidget" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/legacy_checklist.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/options.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/cherry_blossom.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/cozy_campfire.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/dark.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/dark_high_contrast.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/light.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/light_high_contrast.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/pumpkin_soup.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/purple_void.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/ui_themes/spooky_season.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/fancymenu/user_variables.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/konkrete/locals/de_de.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/konkrete/locals/en_us.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/konkrete/locals/pl_pl.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/config/konkrete/locals/pt_br.local" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/Game/mods/konkrete_forge_1.8.0_MC_1.20-1.20.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +112,7 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "Q:/LauncherMain",
+    "last_opened_file_path": "Q:/LauncherMain/Main/Game/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
@@ -154,8 +128,8 @@
       <recent name="Q:\LauncherMain\Main\Game\mods" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="Q:\LauncherMain\Main\Game\mods" />
       <recent name="Q:\LauncherMain\Main\Game\config" />
+      <recent name="Q:\LauncherMain\Main\Game\mods" />
       <recent name="Q:\LauncherMain\Main" />
     </key>
   </component>
