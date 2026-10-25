@@ -343,7 +343,7 @@ layout_action_executable_blocks {
 
 element {
   button_element_executable_block_identifier = 852bd8a3-ae2a-4ef6-9007-95f5df980891-1792855789182
-  [executable_action_instance:bb7ee025-8db8-46fb-9785-0c63cc3dce68-1792856180837][action_type:joinserver] = GamingLife.exaroton.me
+  [executable_action_instance:bb7ee025-8db8-46fb-9785-0c63cc3dce68-1792856180837][action_type:joinserver] = 176.109.219.6:25565
   [executable_block:852bd8a3-ae2a-4ef6-9007-95f5df980891-1792855789182][type:generic] = [executables:bb7ee025-8db8-46fb-9785-0c63cc3dce68-1792856180837;]
   underline_label_on_hover = false
   transparent_background = false
