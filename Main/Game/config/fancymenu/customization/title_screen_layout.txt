@@ -407,7 +407,7 @@ element {
 }
 
 element {
-  source = Version 0.1.21
+  source = Version 0.1.22
   source_mode = direct
   shadow = true
   refresh = false
