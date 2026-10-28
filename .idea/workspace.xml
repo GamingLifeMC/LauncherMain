@@ -112,7 +112,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;Q:/LauncherMain/Main/Game/config&quot;,
+    &quot;last_opened_file_path&quot;: &quot;Q:/LauncherMain/Main/Game/mods&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -124,12 +124,12 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="Q:\LauncherMain\Main\Game\config" />
       <recent name="Q:\LauncherMain\Main\Game\mods" />
+      <recent name="Q:\LauncherMain\Main\Game\config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="Q:\LauncherMain\Main\Game\config" />
       <recent name="Q:\LauncherMain\Main\Game\mods" />
+      <recent name="Q:\LauncherMain\Main\Game\config" />
       <recent name="Q:\LauncherMain\Main" />
     </key>
   </component>
