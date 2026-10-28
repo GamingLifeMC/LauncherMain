@@ -468,7 +468,7 @@ element {
 
 element {
   button_element_executable_block_identifier = 20b4cb13-7738-4345-be94-5a15cb3b7411-1792961355031
-  [executable_action_instance:008621e0-be3e-4a17-9754-b8fd0c52876d-1792961574247][action_type:joinserver] = 188.136.251.176:25565
+  [executable_action_instance:008621e0-be3e-4a17-9754-b8fd0c52876d-1792961574247][action_type:joinserver] = 149.233.152.52:25565
   [executable_block:20b4cb13-7738-4345-be94-5a15cb3b7411-1792961355031][type:generic] = [executables:008621e0-be3e-4a17-9754-b8fd0c52876d-1792961574247;]
   underline_label_on_hover = false
   transparent_background = false
