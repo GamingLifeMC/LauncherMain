@@ -474,7 +474,7 @@ element {
   transparent_background = false
   restartbackgroundanimations = true
   nine_slice_custom_background = false
-  hoverlabel = Hi was geht  :)
+  hoverlabel = Alo :D
   clicksound = [source:location]minecraft:sounds/ui/loom/select_pattern1.ogg
   label = Spiele auf GamingLife
   navigatable = true
