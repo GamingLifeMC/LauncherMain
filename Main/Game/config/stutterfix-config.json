@@ -1,0 +1,5 @@
+{
+  "render_thread_priority": 10,
+  "server_thread_priority": 8,
+  "render_remove_yield": false
+}

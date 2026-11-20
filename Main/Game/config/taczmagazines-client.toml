@@ -1,0 +1,7 @@
+
+[hud]
+	#Show the magazine silhouette HUD in place of TaCZ's ammo counter.
+	#Only has an effect when the server allows it (override_ammo_hud in
+	#taczmagazines-mechanics.toml); if the server disables it, this is ignored.
+	show_magazine_hud = true
+

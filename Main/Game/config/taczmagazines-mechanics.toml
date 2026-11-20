@@ -1,0 +1,171 @@
+
+[loading]
+	#Set to false to use drop-in loading/unloading.
+	#  DROP-IN mode (false):
+	#    Right-click ammo onto a magazine → fill instantly.
+	#    Right-click an empty cursor onto a magazine → unload all ammo instantly.
+	#  TICK-BASED mode (true, default):
+	#    Left-click ammo onto magazine → auto-loads one bullet per interval, EFT-style spinner.
+	#    Right-click empty cursor onto magazine → auto-ejects one bullet per interval.
+	tick_based = true
+	#Ticks between each bullet being loaded (tick-based mode).
+	#20 ticks = 1 second, 10 = 0.5 s, 0 = fastest (1 tick).
+	#Range: 0 – 60
+	#Range: 0 ~ 60
+	load_ticks = 5
+	#Ticks between each bullet being unloaded (tick-based mode).
+	#Same scale as load_ticks.
+	#Range: 0 ~ 60
+	unload_ticks = 5
+
+[extended_magazines]
+	#When true, extended magazines can be loaded into a gun even if the
+	#extended-mag attachment is not installed on that gun.
+	#The gun will also visually display the extended mag bone and use the
+	#correct extended capacity as if the attachment were present.
+	#Only applies to guns that use the magazine system.
+	#Server-authoritative: sent to clients on join and /reload. When false, no client
+	#shows it; when true, each player can still hide it in taczmagazines-client.toml.
+	allow_extended_without_attachment = true
+
+[split_reload]
+	#Some guns do not use the same mechanism for both of their reloads. TaCZ calls the
+	#two halves the EMPTY reload and the TACTICAL reload; for almost every gun both are
+	#the same magazine change and only the timing differs. The exceptions load a whole
+	#batch at once when empty -- a stripper clip, an en-bloc clip, a revolver speed
+	#loader -- and push in single rounds the rest of the time. TaCZ's kar98 is the
+	#shipped example: clip when the rifle is dry and no scope is fitted, one round at a
+	#time otherwise.
+	#When true, guns like that join the magazine system and their two reloads split:
+	#  BULK reload    -> needs an actual magazine item, and swaps it in as one unit.
+	#  ROUND-BY-ROUND -> feeds from loose ammo (and ammo boxes) exactly as TaCZ does.
+	#With no magazine item to hand, an empty gun plays the round-by-round reload
+	#instead of the bulk one, so the gun is never left unloadable.
+	#When false these guns are left entirely to TaCZ and get no magazines at all.
+	#Changing this needs a datapack reload (F3+T or /reload) to take effect.
+	bulk_reload_requires_magazine = true
+	#Which reload a gun uses is decided by its pack's Lua, and no TaCZ API reports it.
+	#It is worked out from the gun's script_param timings, which name a bulk insert as a
+	#"<name>_feed" plus "<name>"/"<name>_cooldown" pair and round-by-round loading as
+	#"loop_feed" or "round1_feed". A gun whose empty reload has a loop of its own
+	#("loop_empty_feed") loads round by round when empty as well, so it is not counted.
+	#A pack that names its timings differently can be corrected here.
+	#Format:
+	#  "modid:gun = bulk"   -- treat its empty reload as a batch insert (clip/speed loader)
+	#  "modid:gun = rounds" -- treat it as loading one round at a time, and leave it alone
+	#Guns the detector found are listed in the log on reload (search '[split-reload]').
+	#Changes take effect after F3+T.
+	gun_overrides = []
+	#TaCZ only ever runs these guns' bulk insert on a completely empty gun, because that
+	#is the one case the pack's script checks for. When true, a stripper clip or speed
+	#loader can also go into a gun that still has rounds in it, loading it in one
+	#motion instead of one round at a time. A clip tops the gun up; a speed loader
+	#empties the cylinder first (see speed_loader_dumps_rounds).
+	#Anything the gun has no room for is handed back as loose rounds, so a part-used clip
+	#never disappears into a nearly full gun.
+	#Default true. When false these guns behave as TaCZ wrote them and only reach for a
+	#clip when dry.
+	allow_bulk_reload_when_loaded = true
+	#Applies only to a gun that still has rounds in it -- an empty one always takes the
+	#clip when there is one. When true, topping a gun up from a clip happens only if the
+	#player picked that magazine from the selector (hold the reload key); a plain tap
+	#reload still feeds single rounds.
+	#Default true, which keeps the tap reload meaning what it has always meant and makes
+	#spending a whole clip on a half-full gun a deliberate act.
+	#With no loose rounds left to feed, a tap reload uses the clip anyway rather than
+	#playing a reload that loads nothing.
+	#Has no effect when allow_bulk_reload_when_loaded is false.
+	partial_bulk_reload_requires_selector = true
+	#A speed loader only goes into an empty cylinder: the revolver is opened, everything
+	#in it is dumped out, and then the loader's rounds go in. When true, a speed-loader
+	#reload does exactly that to a revolver that still has rounds in it, so afterwards
+	#the gun holds what the speed loader held -- even if that is fewer than before.
+	#Stripper clips are not affected: a clip always presses its rounds in on top of
+	#whatever the gun already holds.
+	#The dumped rounds are live ammo and are never lost (see dumped_rounds_on_ground).
+	#A reload cut short before the loader goes in leaves the gun as it was.
+	#When false, a speed loader tops the cylinder up the way a clip does.
+	speed_loader_dumps_rounds = true
+	#Where the rounds a speed-loader reload dumps out of the cylinder go.
+	#  false (default) -> back into the inventory; dropped only if it is full.
+	#  true            -> on the ground at the shooter's feet, to be picked back up.
+	#Has no effect when speed_loader_dumps_rounds is false.
+	dumped_rounds_on_ground = false
+
+[speed_loader_revolvers]
+	#Revolvers are normally left out of the magazine system, since most are loaded one
+	#round at a time. Some always reload with a speed loader instead (TaCZ's taurus500
+	#and rhino357, for example); they are recognised by a speed-loader bone moving in
+	#their reload animation.
+	#When true, those revolvers join the magazine system: every reload, empty or not,
+	#needs a speed loader, and the one coming out goes back to the inventory with
+	#whatever rounds were left in the cylinder.
+	#Revolvers loaded by hand, and clip/speed-loader guns covered by [split_reload],
+	#are not affected.
+	#When false every revolver is left to TaCZ, as before.
+	#Changing this needs a datapack reload (F3+T or /reload) to take effect.
+	require_speed_loader = true
+	#Corrects the speed-loader detector for a single gun.
+	#Format:
+	#  "modid:gun = speedloader" -- always reloads with a speed loader
+	#  "modid:gun = none"        -- loaded by hand; leave it to TaCZ
+	#Detected revolvers are listed in the log on reload (search '[speed-loader]').
+	#Changes take effect after F3+T.
+	gun_overrides = []
+
+[hud]
+	#When true, replaces TaCZ's reserve-ammo counter with a row of magazine silhouettes
+	#that each show how full they are (Ready Or Not-style magazine check UI).
+	#Only applies to guns that use the magazine system.
+	override_ammo_hud = true
+	#Whether the silhouette row also takes over the HUD on split-reload guns --
+	#the ones fed by a stripper clip, en-bloc clip or revolver speed loader (see
+	#[split_reload]). Those guns are loaded from loose rounds as often as from a
+	#magazine, so a row of magazines describes the reserve poorly and TaCZ's plain
+	#number says more. Default false: they keep TaCZ's counter.
+	#The counter itself still counts magazines correctly either way, including
+	#stacked ones, and on these guns it counts loose rounds too.
+	override_ammo_hud_for_split_reload = false
+
+[tooltip]
+	#A gun's tooltip normally shows the loaded magazine on its ammo row. Set this to
+	#alternate that row between the magazine and TaCZ's own loose-ammo entry, so both
+	#the magazine and the round it holds stay visible.
+	#Value is how many seconds each side is shown. 0 keeps the magazine up permanently.
+	#Range: 0 - 30
+	#Range: 0 ~ 30
+	ammo_cycle_seconds = 2
+
+[in_hand_loading]
+	#When true, holding a magazine in your main hand enables tick-based loading/unloading.
+	#  Left-click  → start/stop adding bullets one per load_ticks interval.
+	#  Right-click → start/stop removing bullets one per unload_ticks interval.
+	#  Scrolling to another slot or dropping the magazine cancels the session.
+	#  Progress appears as a ring on the hotbar slot icon, not the cursor.
+	#  Uses the same load_ticks / unload_ticks intervals as inventory tick-based mode.
+	#  Block breaking and arm-swing are suppressed whenever a magazine is held.
+	in_hand_tick_based = true
+
+[ammo_boxes]
+	#Allow magazine items to be placed inside TaCZ ammo boxes.
+	#Right-click a magazine onto a box to store it; right-click the box
+	#onto an empty inventory slot to take a stored magazine back out.
+	store_magazines = true
+	#Allow magazines to take compatible loose rounds from TaCZ ammo boxes.
+	#Creative ammo boxes are treated as infinite sources.
+	supply_bullets_to_magazines = true
+	#When true, bullets and magazines cannot share the same ammo box.
+	#A box containing bullets rejects magazines, and a box containing
+	#magazines rejects bullets. Set false to share the box's stack slots.
+	separate_magazines_and_ammo = true
+	#When true, loose ammo and loose magazines in the player inventory
+	#are used before ammo-box contents. Set false to drain boxes first.
+	prefer_player_inventory = true
+
+[sound]
+	#Volume (0.0-1.0) at which OTHER players hear someone loading or unloading
+	#a magazine. The player doing it always hears it at full volume.
+	#Fades out over 16 blocks. Set 0 so only the loading player hears it.
+	#Range: 0.0 ~ 1.0
+	nearby_reload_volume = 0.15
+

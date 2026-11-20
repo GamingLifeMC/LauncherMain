@@ -1,0 +1,27 @@
+
+[gun_overrides]
+	#Override which magazine family a gun uses, or exclude a gun from the magazine system.
+	#
+	#Format:
+	#  "modid:gun_id = family_id"  — force the gun into a specific magazine family.
+	#  "modid:gun_id = none"       — exclude the gun (uses TaCZ default ammo behaviour).
+	#
+	#Example: "tacz:example_pistol = 9x19mm_17"
+	#Example: "tacz:example_revolver = none"
+	#
+	#Family IDs are printed to the log on startup/datapack reload
+	#(search for 'Discovered magazine family').
+	#Changes take effect after F3+T.
+	entries = []
+
+[isolated_guns]
+	#Guns listed here generate their OWN private magazine family instead of sharing
+	#with other guns of the same ammo type and capacity.
+	#Their magazine item will use that gun's own 3D model for rendering.
+	#
+	#Format: ["modid:gun_name", "modid:gun_name2", ...]
+	#Example: ["tacz:vector45", "tacz:m1911"]
+	#
+	#Changes take effect after F3+T.
+	guns = []
+

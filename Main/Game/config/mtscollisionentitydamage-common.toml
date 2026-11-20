@@ -1,0 +1,57 @@
+
+#MTS Collision Entity Damage settings
+#Damage = entityMaxHealth x (percentage / 100) x speed (m/s). See the README for details.
+[entity_damage]
+
+	#--- Player INSIDE a vehicle that crashes into another vehicle ---
+	[entity_damage.inside_vehicle]
+		#Minimum ticks between two damage triggers for the same pair of vehicles.
+		#20 ticks = 1 second.
+		#Range: 1 ~ 1200
+		insideCooldownTicks = 40
+		#Minimum CLOSING speed between the two vehicles (m/s) below which
+		#no damage is dealt to the player.
+		#Range: 0.0 ~ 200.0
+		insideMinSpeedMs = 10.0
+		#Percentage of the player's max health lost PER m/s of closing speed.
+		#2 = gentle default value.
+		#Range: 0.0 ~ 100.0
+		insideDamagePercent = 2.0
+
+	#--- Player OUTSIDE, hit by a moving vehicle ---
+	[entity_damage.outside_player]
+		#Minimum ticks between two damage triggers for the same vehicle/player pair.
+		#Range: 1 ~ 1200
+		outsidePlayerCooldownTicks = 40
+		#Minimum vehicle speed (m/s) below which no damage is dealt.
+		#Range: 0.0 ~ 200.0
+		outsidePlayerMinSpeedMs = 10.0
+		#Percentage of the player's max health lost PER m/s of vehicle speed.
+		#4 = default value (more dangerous than being inside a vehicle).
+		#Range: 0.0 ~ 100.0
+		outsidePlayerDamagePercent = 4.0
+
+	#--- Non-player entity OUTSIDE, hit by a moving vehicle ---
+	[entity_damage.outside_entity]
+		#Minimum ticks between two damage triggers for the same vehicle/entity pair.
+		#Range: 1 ~ 1200
+		outsideEntityCooldownTicks = 40
+		#Minimum vehicle speed (m/s) below which no damage is dealt.
+		#Range: 0.0 ~ 200.0
+		outsideEntityMinSpeedMs = 10.0
+		#Percentage of the entity's max health lost PER m/s of vehicle speed.
+		#4 = default value. Based on the entity's ACTUAL max health: a tough mob
+		#shrugs off the same hit better than a fragile one.
+		#Range: 0.0 ~ 100.0
+		outsideEntityDamagePercent = 4.0
+
+	#--- Knockback (outside only, TNT-style explosion push) ---
+	[entity_damage.knockback]
+		#Approximate distance (in blocks) an outside entity is pushed when hit,
+		#at a fixed reference speed of 10 m/s. Above 10 m/s, the push increases
+		#proportionally with the vehicle's speed. Like any Minecraft knockback, the actual
+		#distance traveled stays approximate (depends on terrain, friction, etc.).
+		#Set to 0 to fully disable knockback.
+		#Range: 0.0 ~ 50.0
+		knockbackDistance = 2.0
+

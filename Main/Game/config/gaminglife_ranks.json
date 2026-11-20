@@ -1,0 +1,31 @@
+{
+  "ownerUUID": "855f3800-d728-48b4-aa72-543def54c8c6",
+  "ranks": {
+    "spieler": {
+      "display": "§7[Bürger]",
+      "permissions": [
+        "gaminglife.player",
+        "gaminglife.owner",
+        "gaminglife.dev",
+        "gaminglife.staff",
+        "gaminglife.builder"
+      ],
+      "weight": 0
+    }
+  },
+  "players": {
+    "855f3800-d728-48b4-aa72-543def54c8c6": "spieler"
+  },
+  "playerPermissions": {
+    "855f3800-d728-48b4-aa72-543def54c8c6": [
+      "gaminglife.staff",
+      "gaminglife.dev",
+      "gaminglife.owner",
+      "gaminglife.builder",
+      "gaminglife.mod",
+      "gaminglife.admin",
+      "gaminglife.suo",
+      "gaminglife.sup"
+    ]
+  }
+}

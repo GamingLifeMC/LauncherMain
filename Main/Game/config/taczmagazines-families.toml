@@ -1,0 +1,13 @@
+
+[family_models]
+	#Controls which gun's magazine model is used to represent each magazine family.
+	#
+	#Format:  "family_id = modid:gun_id"
+	#Example: "9x19mm_17 = tacz:m9"
+	#
+	#The gun must be compatible with that family.
+	#If no override is set for a family, the first alphabetically-sorted gun is used.
+	#Family IDs are printed to the log on startup (search 'Discovered magazine family').
+	#Changes take effect after F3+T.
+	overrides = []
+
